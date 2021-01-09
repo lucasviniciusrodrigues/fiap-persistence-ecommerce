@@ -166,6 +166,39 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Saverequest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"name1\",\r\n    \"quantity\": \"1990-01-01 00:00:00\",\r\n    \"actualUnitValue\": \"122\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/product/v1/id/5ff9a4c53445d300399ce08a",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product",
+						"v1",
+						"id",
+						"5ff9a4c53445d300399ce08a"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
