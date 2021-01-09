@@ -11,6 +11,7 @@ import java.util.List;
 @Document
 public class ClientEntity {
 
+    @Id
     private String costumerId;
     private String name;
     private String document;

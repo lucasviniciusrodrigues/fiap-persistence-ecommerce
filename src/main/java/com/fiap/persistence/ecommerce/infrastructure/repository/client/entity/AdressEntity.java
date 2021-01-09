@@ -1,13 +1,12 @@
 package com.fiap.persistence.ecommerce.infrastructure.repository.client.entity;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@Document
 public class AdressEntity {
-	
-	@Id
-	private String addressId;
+
 	private String street;
 	private String city;
 	private String neighborhood;
