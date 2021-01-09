@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.HttpClientErrorException.BadRequest;
 
 @ControllerAdvice
-class GeneralExceptionHandler {
+class TBDExceptionHandler { // TODO TBD-ExceptionHandler
 
     @ExceptionHandler(value = BadRequest.class)
     public ResponseEntity<Object> badRequestException(BadRequest e){

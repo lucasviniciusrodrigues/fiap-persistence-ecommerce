@@ -1,9 +1,8 @@
 package com.fiap.persistence.ecommerce.adapter.controller.http.v1;
 
-import com.fiap.persistence.ecommerce.infrastructure.repository.client.entity.Client;
+import com.fiap.persistence.ecommerce.infrastructure.repository.client.entity.ClientEntity;
+import com.fiap.persistence.ecommerce.usecase.client.GetClientUsecase;
 import com.fiap.persistence.ecommerce.usecase.client.OnboardingClientUsecase;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,33 +13,28 @@ import org.springframework.web.bind.annotation.*;
 public class ClientController {
 
     private OnboardingClientUsecase onboardingClientUsecase;
+    private GetClientUsecase getClientUsecase;
 
     @Autowired
-    public ClientController(OnboardingClientUsecase onboardingClientUsecase){
+    public ClientController(OnboardingClientUsecase onboardingClientUsecase,
+            GetClientUsecase getClientUsecase){
         this.onboardingClientUsecase = onboardingClientUsecase;
+        this.getClientUsecase = getClientUsecase;
     }
 
     @GetMapping(value="/client")
-    public Object getClient(){
-
-
-        return "response";
-    }
-
-    @GetMapping(value="/adress/{clientId}")
-    public Object getClientAdress(){
-
-
-        return "response";
+    public ResponseEntity<Object> getClient(
+            @RequestParam(value = "document") String document)
+    {
+        return new ResponseEntity<Object>(getClientUsecase.execute(document), HttpStatus.OK);
     }
 
     @PutMapping(value="/onboarding")
-    public Object onboardingClient(
-            @RequestBody Client client)
+    public ResponseEntity<Object> onboardingClient(
+            @RequestBody ClientEntity client)
     {
-
         onboardingClientUsecase.execute(client);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(client, HttpStatus.CREATED);
     }
 }
 
