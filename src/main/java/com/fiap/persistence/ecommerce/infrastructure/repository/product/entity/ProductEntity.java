@@ -13,7 +13,10 @@ public class ProductEntity {
     @Id
     private String productId;
     private String name;
-    private String quantity;
+    private int quantity;
     private BigDecimal actualUnitValue;
 
+    public void subtractQuantity(int quantity) {
+        setQuantity( getQuantity() - quantity);
+    }
 }

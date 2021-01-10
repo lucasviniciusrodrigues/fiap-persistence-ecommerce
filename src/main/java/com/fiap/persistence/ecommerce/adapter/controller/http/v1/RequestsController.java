@@ -1,6 +1,7 @@
 package com.fiap.persistence.ecommerce.adapter.controller.http.v1;
 
 import com.fiap.persistence.ecommerce.adapter.exception.BadRequestProductNotDeclare;
+import com.fiap.persistence.ecommerce.adapter.exception.NoStockAvaliable;
 import com.fiap.persistence.ecommerce.infrastructure.repository.request.entity.RequestEntity;
 import com.fiap.persistence.ecommerce.usecase.request.GetRequestUsecase;
 import com.fiap.persistence.ecommerce.usecase.request.SaveRequestUsecase;
@@ -40,7 +41,7 @@ public class RequestsController {
 
     @PutMapping(value="/save")
     public ResponseEntity<Object> saveRequest(
-            @RequestBody RequestEntity requestEntity) throws BadRequestProductNotDeclare {
+            @RequestBody RequestEntity requestEntity) throws BadRequestProductNotDeclare, NoStockAvaliable {
         return new ResponseEntity<>(saveRequestUsecase.execute(requestEntity), HttpStatus.CREATED);
     }
 }

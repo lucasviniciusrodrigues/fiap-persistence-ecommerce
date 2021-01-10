@@ -1,4 +1,4 @@
-package com.fiap.persistence.ecommerce.adapter.exception.handler;
+package com.fiap.persistence.ecommerce.adapter.exception;
 
 import com.fiap.persistence.ecommerce.infrastructure.repository.request.entity.RequestEntityItem;
 

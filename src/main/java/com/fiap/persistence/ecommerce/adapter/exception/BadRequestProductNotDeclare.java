@@ -6,6 +6,10 @@ public class BadRequestProductNotDeclare extends Exception{
 
     RequestEntityItem  requestEntityItem;
 
+    public RequestEntityItem getRequestEntityItem() {
+        return requestEntityItem;
+    }
+
     public BadRequestProductNotDeclare(RequestEntityItem requestEntityItem) {
         this.requestEntityItem = requestEntityItem;
     }
