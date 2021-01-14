@@ -9,6 +9,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Classe utilizada para controlar o direcionamento das requisções feitas pela aplicação quando utilizada a url /client/v1
+ * As requisições feita pela aplicação podem ser:
+ * /client - para listar os clientes 
+ * /adress/{clientId} - para listar o endereço do clientes através do ID
+ * @author Lucas Vinicius, Marcio Campos, Rafael Martins
+ */
+
 @RestController
 @RequestMapping("/client/v1")
 public class ClientController {

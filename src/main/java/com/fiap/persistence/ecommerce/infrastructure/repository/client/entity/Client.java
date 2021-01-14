@@ -6,6 +6,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
+/**
+ * Classe que representa o modelo para criação dos clientes.
+ * @author Lucas Vinicius
+ */
+
+
 @Data
 @Document
 public class Client {
