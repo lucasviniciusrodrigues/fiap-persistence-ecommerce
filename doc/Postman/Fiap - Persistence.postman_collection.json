@@ -79,7 +79,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"name1\",\r\n    \"quantity\": \"1990-01-01 00:00:00\",\r\n    \"actualUnitValue\": \"122\"\r\n}",
+					"raw": "{\r\n    \"name\": \"name1 123 123 - abdala&\",\r\n    \"quantity\": 12,\r\n    \"actualUnitValue\": \"122\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -119,7 +119,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/product/v1/name/name1 123 123 - abdala&",
+					"raw": "localhost:8080/product/v1/name/name1",
 					"host": [
 						"localhost"
 					],
@@ -128,7 +128,7 @@
 						"product",
 						"v1",
 						"name",
-						"name1 123 123 - abdala&"
+						"name1"
 					]
 				}
 			},
@@ -169,15 +169,12 @@
 		},
 		{
 			"name": "Saverequest",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"name1\",\r\n    \"quantity\": \"1990-01-01 00:00:00\",\r\n    \"actualUnitValue\": \"122\"\r\n}",
+					"raw": "{\r\n    \"document\": \"123\",\r\n    \"itens\": [\r\n        {\r\n            \"productId\": \"5ffb228857dde34cc22aa55c\",\r\n            \"quantity\": 9\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -185,16 +182,15 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/product/v1/id/5ff9a4c53445d300399ce08a",
+					"raw": "localhost:8080/request/v1/save",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"product",
+						"request",
 						"v1",
-						"id",
-						"5ff9a4c53445d300399ce08a"
+						"save"
 					]
 				}
 			},
