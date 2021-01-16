@@ -1,8 +1,6 @@
 package com.fiap.persistence.ecommerce.adapter.controller.http.v1;
-import com.fiap.persistence.ecommerce.infrastructure.repository.client.entity.ClientEntity;
+
 import com.fiap.persistence.ecommerce.infrastructure.repository.product.entity.ProductEntity;
-import com.fiap.persistence.ecommerce.usecase.client.GetClientUsecase;
-import com.fiap.persistence.ecommerce.usecase.client.OnboardingClientUsecase;
 import com.fiap.persistence.ecommerce.usecase.product.GetProductUsecase;
 import com.fiap.persistence.ecommerce.usecase.product.SaveProductUsecase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +8,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
-
-
+/**
+ * Classe utilizada para controlar o direcionamento das requisções feitas pela aplicação quando utilizada a url /product/v1
+ * As requisições feita pela aplicação podem ser:
+ * /save - para salvar o produto
+ * /product para buscar o produto
+ * @author Lucas Vinicius, Marcio Campos, Rafael Martins
+ */
 @RestController
 @RequestMapping("/product/v1")
 public class ProductController {

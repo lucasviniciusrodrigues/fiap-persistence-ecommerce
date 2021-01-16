@@ -6,6 +6,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.UUID;
 
+/**
+ * Classe que representa o modelo para criação dos endereços.
+ * @author Lucas Vinicius
+ */
+
 @Data
 @Document
 public class AdressEntity {

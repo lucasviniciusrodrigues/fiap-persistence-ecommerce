@@ -1,0 +1,6 @@
+A escolha do MYSQL foifeita devido a consistencia do banco e nível de escalabilidade.
+E algumas outras vantagens:
+Melhor performance – Aborda problemas com escala de grandes volumes de dados relacionais estruturados, ao mesmo tempo em que suporta baixa latência e alto desempenho.
+Custos reduzidos – O Mongodb, por exemplo, é gratuito, de código aberto, oferece uma arquitetura eficiente e escalonada ao invés de uma arquitetura monolítica cara.
+Dados aprimorados – Mais flexibilidade para alavancar enormes quantidades de dados não relacionais estruturados, semi-estruturados e desestruturados.
+Velocidade para o mercado – A programação orientada a objetos permite aos desenvolvedores executar consultas com menos preparação e sem ter que navegar arquiteturas de banco de dados SQL.

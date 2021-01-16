@@ -10,6 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Classe utilizada para controlar o direcionamento das requisções feitas pela aplicação quando utilizada a url /request/v1
+ *
+ * @author Lucas Vinicius, Marcio Campos, Rafael Martins
+ */
 
 @RestController
 @RequestMapping("/request/v1")
