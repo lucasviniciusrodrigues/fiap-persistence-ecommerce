@@ -1,7 +1,8 @@
 package com.fiap.persistence.ecommerce.adapter.controller.http.v1;
 
+import com.fiap.persistence.ecommerce.adapter.exception.AddressNotFound;
 import com.fiap.persistence.ecommerce.infrastructure.repository.client.entity.ClientEntity;
-import com.fiap.persistence.ecommerce.usecase.client.GetAdressUsecase;
+import com.fiap.persistence.ecommerce.usecase.client.GetAddressUsecase;
 import com.fiap.persistence.ecommerce.usecase.client.GetClientUsecase;
 import com.fiap.persistence.ecommerce.usecase.client.OnboardingClientUsecase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +16,15 @@ public class ClientController {
 
     private OnboardingClientUsecase onboardingClientUsecase;
     private GetClientUsecase getClientUsecase;
-    private GetAdressUsecase getAdressUsecase;
+    private GetAddressUsecase getAddressUsecase;
 
     @Autowired
     public ClientController(OnboardingClientUsecase onboardingClientUsecase,
                             GetClientUsecase getClientUsecase,
-                            GetAdressUsecase getAdressUsecase){
+                            GetAddressUsecase getAddressUsecase){
         this.onboardingClientUsecase = onboardingClientUsecase;
         this.getClientUsecase = getClientUsecase;
-        this.getAdressUsecase = getAdressUsecase;
+        this.getAddressUsecase = getAddressUsecase;
     }
 
     @GetMapping(value="/client")
@@ -41,11 +42,11 @@ public class ClientController {
         return new ResponseEntity<>(client, HttpStatus.CREATED);
     }
 
-    @GetMapping(value="/client/address/{adressId}")
-    public ResponseEntity<Object> getAdressById(
-            @RequestParam(value = "adressId") String addressId)
-    {
-        return new ResponseEntity<Object>(getAdressUsecase.execute(addressId), HttpStatus.OK);
+    @GetMapping(value="/client/address/{addressId}")
+    public ResponseEntity<Object> getAddressById(
+            @RequestParam(value = "addressId") String addressId,
+            @RequestParam(value = "document") String document) throws AddressNotFound {
+        return new ResponseEntity<Object>(getAddressUsecase.execute(document, addressId), HttpStatus.OK);
     }
 }
 
