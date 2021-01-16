@@ -12,9 +12,8 @@ import java.util.List;
 public class ClientEntity {
 
     @Id
-    private String costumerId;
-    private String name;
     private String document;
+    private String name;
     private String birthday;
 
     @JsonProperty("adress")
