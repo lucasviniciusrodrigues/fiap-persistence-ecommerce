@@ -1,6 +1,7 @@
 package com.fiap.persistence.ecommerce.adapter.controller.http.v1;
 
 import com.fiap.persistence.ecommerce.infrastructure.repository.client.entity.ClientEntity;
+import com.fiap.persistence.ecommerce.usecase.client.GetAdressUsecase;
 import com.fiap.persistence.ecommerce.usecase.client.GetClientUsecase;
 import com.fiap.persistence.ecommerce.usecase.client.OnboardingClientUsecase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +15,15 @@ public class ClientController {
 
     private OnboardingClientUsecase onboardingClientUsecase;
     private GetClientUsecase getClientUsecase;
+    private GetAdressUsecase getAdressUsecase;
 
     @Autowired
     public ClientController(OnboardingClientUsecase onboardingClientUsecase,
-            GetClientUsecase getClientUsecase){
+                            GetClientUsecase getClientUsecase,
+                            GetAdressUsecase getAdressUsecase){
         this.onboardingClientUsecase = onboardingClientUsecase;
         this.getClientUsecase = getClientUsecase;
+        this.getAdressUsecase = getAdressUsecase;
     }
 
     @GetMapping(value="/client")
@@ -35,6 +39,13 @@ public class ClientController {
     {
         onboardingClientUsecase.execute(client);
         return new ResponseEntity<>(client, HttpStatus.CREATED);
+    }
+
+    @GetMapping(value="/client/address/{adressId}")
+    public ResponseEntity<Object> getAdressById(
+            @RequestParam(value = "adressId") String addressId)
+    {
+        return new ResponseEntity<Object>(getAdressUsecase.execute(addressId), HttpStatus.OK);
     }
 }
 

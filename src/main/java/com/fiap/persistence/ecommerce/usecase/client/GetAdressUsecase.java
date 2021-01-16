@@ -5,20 +5,17 @@ import com.fiap.persistence.ecommerce.infrastructure.repository.client.entity.Cl
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.UUID;
-
 @Component
-public class OnboardingClientUsecase {
+public class GetAdressUsecase {
 
     ClientRepository clientRepository;
 
     @Autowired
-    public OnboardingClientUsecase (ClientRepository clientRepository){
+    public GetAdressUsecase(ClientRepository clientRepository){
         this.clientRepository = clientRepository;
     }
 
-    public void execute(ClientEntity clientRequest) {
-        clientRequest.getAdressEntities().stream().forEach( it -> it.setId(UUID.randomUUID()));
-        clientRepository.save(clientRequest);
+    public ClientEntity execute(String document) {
+        return clientRepository.findFirstByDocument(document);
     }
 }
