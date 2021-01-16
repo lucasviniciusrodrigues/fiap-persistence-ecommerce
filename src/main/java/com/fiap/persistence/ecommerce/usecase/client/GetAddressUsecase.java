@@ -21,9 +21,11 @@ public class GetAddressUsecase {
     public AdressEntity execute(String document, String addressId) throws AddressNotFound {
 
         ClientEntity clientEntity = clientRepository.findFirstByDocument(document);
-        return clientEntity.getAdressEntities().stream()
-                .filter(it -> it.getId().equals(addressId)).findFirst().get();
+        for(AdressEntity it : clientEntity.getAdressEntities())
+            if(it.equals(addressId))
+                return it;
 
-        //throw new AddressNotFound();
+        throw new AddressNotFound();
+
     }
 }

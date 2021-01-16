@@ -16,7 +16,7 @@ import java.util.UUID;
 public class AdressEntity {
 
 	@Id
-	private UUID id;
+	private String id;
 	private String street;
 	private String city;
 	private String neighborhood;

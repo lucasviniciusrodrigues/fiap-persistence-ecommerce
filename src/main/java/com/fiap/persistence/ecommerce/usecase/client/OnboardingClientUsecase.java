@@ -21,7 +21,7 @@ public class OnboardingClientUsecase {
     }
 
     public void execute(ClientEntity clientRequest) {
-        clientRequest.getAdressEntities().stream().forEach( it -> it.setId(UUID.randomUUID()));
+        clientRequest.getAdressEntities().stream().forEach( it -> it.setId(UUID.randomUUID().toString()));
         clientRepository.save(clientRequest);
     }
 }

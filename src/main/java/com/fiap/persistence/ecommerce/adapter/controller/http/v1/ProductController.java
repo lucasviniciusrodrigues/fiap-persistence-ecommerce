@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
  * Classe utilizada para controlar o direcionamento das requisções feitas pela aplicação quando utilizada a url /product/v1
  * As requisições feita pela aplicação podem ser:
  * /save - para salvar o produto
- * /product para buscar o produto
+ * /id/{productId} para buscar o produto pelo id
+ * /name/{productName} para buscar o produto pelo nome
  * @author Lucas Vinicius, Marcio Campos, Rafael Martins
  */
 @RestController

@@ -1,5 +1,5 @@
 package com.fiap.persistence.ecommerce.adapter.exception;
 
-public class AddressNotFound extends Exception{
+public class AddressNotFound extends Exception {
 
 }

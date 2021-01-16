@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.*;
 /**
  * Classe utilizada para controlar o direcionamento das requisções feitas pela aplicação quando utilizada a url /client/v1
  * As requisições feita pela aplicação podem ser:
- * /client - para listar os clientes 
- * /adress/{clientId} - para listar o endereço do clientes através do ID
+ * /client - para consultar o cliente com o determinado documento
+ * /onboarding - para cadastrar o cliente
+ * /client/address/{addressId} - para listar o endereço através do ID
  * @author Lucas Vinicius, Marcio Campos, Rafael Martins
  */
 
@@ -52,7 +53,7 @@ public class ClientController {
 
     @GetMapping(value="/client/address/{addressId}")
     public ResponseEntity<Object> getAddressById(
-            @RequestParam(value = "addressId") String addressId,
+            @PathVariable(value = "addressId") String addressId,
             @RequestParam(value = "document") String document) throws AddressNotFound {
         return new ResponseEntity<Object>(getAddressUsecase.execute(document, addressId), HttpStatus.OK);
     }

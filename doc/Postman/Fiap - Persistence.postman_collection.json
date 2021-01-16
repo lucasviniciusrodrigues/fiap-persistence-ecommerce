@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6a973a9b-2c1f-4f2b-a45f-8853e89bc662",
+		"_postman_id": "bb3b5212-4c06-4b18-bcf6-fb5a45c6ddd4",
 		"name": "Fiap - Persistence",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -23,7 +23,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/client/v1/client?document=123",
+					"raw": "localhost:8080/client/v1/client?document=1234",
 					"host": [
 						"localhost"
 					],
@@ -32,6 +32,46 @@
 						"client",
 						"v1",
 						"client"
+					],
+					"query": [
+						{
+							"key": "document",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get address",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"name1\",\r\n    \"birthday\": \"1990-01-01 00:00:00\",\r\n    \"document\": \"123\",\r\n    \"adress\": [\r\n        {\r\n            \"street\": \"street1\",\r\n            \"city\": \"city1\",\r\n            \"neighborhood\": \"neighborhood1\",\r\n            \"number\": \"number1\",\r\n            \"state\": \"state1\",\r\n            \"zipCode\": \"zipCode1\"\r\n        },\r\n        {\r\n            \"street\": \"street1.2\",\r\n            \"city\": \"city1.2\",\r\n            \"neighborhood\": \"neighborhood1.2\",\r\n            \"number\": \"number1.2\",\r\n            \"state\": \"state1.2\",\r\n            \"zipCode\": \"zipCode1.2\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/client/v1/client/address/34336e5b-31e6-4e73-a497-9ecb166998?document=123",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"client",
+						"v1",
+						"client",
+						"address",
+						"34336e5b-31e6-4e73-a497-9ecb166998"
 					],
 					"query": [
 						{
@@ -50,7 +90,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"name1\",\r\n    \"birthday\": \"1990-01-01 00:00:00\",\r\n    \"document\": \"123\",\r\n    \"adress\": [\r\n        {\r\n            \"street\": \"street1\",\r\n            \"city\": \"city1\",\r\n            \"neighborhood\": \"neighborhood1\",\r\n            \"number\": \"number1\",\r\n            \"state\": \"state1\",\r\n            \"zipCode\": \"zipCode1\"\r\n        },\r\n        {\r\n            \"street\": \"street1.2\",\r\n            \"city\": \"city1.2\",\r\n            \"neighborhood\": \"neighborhood1.2\",\r\n            \"number\": \"number1.2\",\r\n            \"state\": \"state1.2\",\r\n            \"zipCode\": \"zipCode1.2\"\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"name\": \"name2\",\r\n    \"birthday\": \"1990-01-01 00:00:00\",\r\n    \"document\": \"1234\",\r\n    \"adress\": [\r\n        {\r\n            \"street\": \"street1\",\r\n            \"city\": \"city1\",\r\n            \"neighborhood\": \"neighborhood1\",\r\n            \"number\": \"number1\",\r\n            \"state\": \"state1\",\r\n            \"zipCode\": \"zipCode1\"\r\n        },\r\n        {\r\n            \"street\": \"street1.2\",\r\n            \"city\": \"city1.2\",\r\n            \"neighborhood\": \"neighborhood1.2\",\r\n            \"number\": \"number1.2\",\r\n            \"state\": \"state1.2\",\r\n            \"zipCode\": \"zipCode1.2\"\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -79,7 +119,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"name1 123 123 - abdala&\",\r\n    \"quantity\": 12,\r\n    \"actualUnitValue\": \"122\"\r\n}",
+					"raw": "{\r\n    \"name\": \"name1\",\r\n    \"quantity\": 60,\r\n    \"actualUnitValue\": \"1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,7 +142,7 @@
 			"response": []
 		},
 		{
-			"name": "Save product by name",
+			"name": "Get product by name",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -135,7 +175,7 @@
 			"response": []
 		},
 		{
-			"name": "Save product by id",
+			"name": "Get product by id",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -152,7 +192,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/product/v1/id/5ff9a4c53445d300399ce08a",
+					"raw": "localhost:8080/product/v1/id/600349ed003c6e6f91fcadae",
 					"host": [
 						"localhost"
 					],
@@ -161,20 +201,20 @@
 						"product",
 						"v1",
 						"id",
-						"5ff9a4c53445d300399ce08a"
+						"600349ed003c6e6f91fcadae"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Saverequest",
+			"name": "Save request",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"document\": \"123\",\r\n    \"itens\": [\r\n        {\r\n            \"productId\": \"5ffb228857dde34cc22aa55c\",\r\n            \"quantity\": 9\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"document\": \"123\",\r\n    \"itens\": [\r\n        {\r\n            \"productId\": \"60034a2f003c6e6f91fcadaf\",\r\n            \"quantity\": 9\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -191,6 +231,72 @@
 						"request",
 						"v1",
 						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get request by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"document\": \"123\",\r\n    \"itens\": [\r\n        {\r\n            \"productId\": \"5ffb228857dde34cc22aa55c\",\r\n            \"quantity\": 9\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/request/v1/id/60034a5a003c6e6f91fcadb0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"request",
+						"v1",
+						"id",
+						"60034a5a003c6e6f91fcadb0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List request by doc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"document\": \"123\",\r\n    \"itens\": [\r\n        {\r\n            \"productId\": \"5ffb228857dde34cc22aa55c\",\r\n            \"quantity\": 9\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/request/v1/document/123",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"request",
+						"v1",
+						"document",
+						"123"
 					]
 				}
 			},
